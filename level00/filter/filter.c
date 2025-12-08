@@ -1,15 +1,13 @@
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i = 0;
-
 	while (s2[i])
 	{
-		if (!s1)
-			return (0);
 		if (s1[i] == s2[i])
 			i++;
 		else
@@ -21,9 +19,8 @@ int	ft_strcmp(char *s1, char *s2)
 void	filter(char *s1, char *s2)
 {
 	int	i = 0;
-	int	len = strlen(s2);
 	int	j;
-	char	c;
+	int	len = strlen(s2);
 
 	while (s1[i])
 	{
@@ -45,15 +42,15 @@ void	filter(char *s1, char *s2)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	char	big[10000];
 	int	i = 0;
 	int	readed;
+	char	big[10000];
 	char	c;
 
 	if (ac != 2 || !av[1][0])
-		return (1);
+		return (0);
 	readed = read(0, &c, 1);
 	while (readed)
 	{
@@ -67,5 +64,4 @@ int main(int ac, char **av)
 	filter(big, &av[1][0]);
 	return (0);
 }
-
 

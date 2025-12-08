@@ -1,11 +1,10 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-int	ft_strlen(char *s)
+int	ft_strlen(char *str)
 {
 	int	i = 0;
-	
-	while (s[i])
+	while (str)
 		i++;
 	return (i);
 }
@@ -19,18 +18,18 @@ void	ft_swap(char *a, char *b)
 
 void	ft_sort(char *str)
 {
-	for(int i = 0; str[i]; i++)
-		for(int j = 0; str[j]; j++)
-			if (str[j] > str[i])
+	for (int i = 0; str[i]; i++)
+		for (int j = 0; str[j]; j++)
+			if (str[i] < str[j])
 				ft_swap(&str[i], &str[j]);
 }
 
 int	permute(char *str, int len)
 {
-	int i = len - 2;
-	int j = len - 1;
-	int r = len - 1;
-	int l;
+	int	i = len - 2;
+	int	j = len - 1;
+	int	r = len - 1;
+	int	l;
 
 	while (i >= 0 && str[i] >= str[i + 1])
 		i--;
@@ -50,8 +49,6 @@ int	main(int ac, char **av)
 	char	*str;
 	int	i = 0;
 
-	if (ac != 2)
-		return (1);
 	str = malloc(ft_strlen(av[1]) + 1);
 	if (!str)
 		return (1);
@@ -68,5 +65,4 @@ int	main(int ac, char **av)
 	free(str);
 	return (0);
 }
-
 
