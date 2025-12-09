@@ -32,15 +32,12 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 		return (write(1, "\n", 1), 0);
-
 	int n = atoi(av[1]);
 	if (n <= 3)
 		return (write(1, "\n", 1), 0);
-
 	int *b = malloc(sizeof(int) * n);
 	if (!b)
 		return (1);
-
 	solve(b, n, 0);
 	free(b);
 	return (0);
