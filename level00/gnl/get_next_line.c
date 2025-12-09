@@ -6,13 +6,11 @@
 /*   By: nguinot- <nguinot-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 10:28:27 by nguinot-          #+#    #+#             */
-/*   Updated: 2025/12/09 13:31:51 by nguinot-         ###   ########.fr       */
+/*   Updated: 2025/12/09 18:09:13 by nguinot-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-#define	BUFFER_SIZE 20
 
 char	*ft_strdup(char *src)
 {
